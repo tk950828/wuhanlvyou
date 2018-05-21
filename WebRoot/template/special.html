@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>东方芝加哥—武汉</title>
+
+  <meta content="东方芝加哥-武汉" name="keywords" />
+
+  <meta content="东方芝加哥-武汉" name="description" />
+
+  <link href="../css/base.css" rel="stylesheet" type="text/css">
+
+  <link href="../css/pagename.css" rel="stylesheet" type="text/css">
+
+  <link href="../css/basic.css" rel="stylesheet"> 
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<!--header-->
+
+  <div class="header"> 
+
+   <div class="w1000">
+
+    <p>你好，欢迎光临东方芝加哥-武汉！</p>
+
+    <div class="contact"><a href="../index.html">设为首页</a> <a href="../index.html">加入收藏</a></div>
+
+  </div>
+
+</div>
+
+
+
+
+
+<div class="w1000">
+
+	<div class="header_bottom">
+
+   <a href="../index.html"><img src="../images/wuhan/logowuhanc.jpg" width="300" height="50" alt="" title="东方芝加哥-武汉"></a>
+
+   <ul>
+
+     <li><a href="../index.html">网站首页</a></li>       
+
+     <li><a href="historic.html">历史</a></li>     
+
+     <li><a href="beautiful.html">风景</a></li>           
+
+     <li><a href="delicacy.html">美食</a></li>      
+
+     <li><a href="new.html">动态</a></li>      
+
+     <li><a href="leave.html">留言</a></li>      
+
+     <li><a href="about.html">团队介绍</a></li>   
+
+     <li><a href="connection.html">联系我们</a></li>
+
+   </ul>  
+
+ </div>       
+
+</div>
+<!--header结束--> 
+
+<div class="container"> 		
+
+		<!--banner-->
+
+		<div class="banner_erji">
+
+        	<img src="../images/wuhan/special.jpg" width="1000" height="187" alt="" title="">        </div>
+
+		<!--banner end--> 
+
+		
+
+		<!--content-->
+
+		<div class="content clearfix">
+
+        	<div class="leftbar">
+
+            	<div class="leftnav">
+
+                	<h1>必吃美食</h1>
+
+                	<ul class="ul_left">
+
+                    
+
+                    
+
+        <li><h3><a href="delicacy.html">风味小吃</a></h3>
+
+</li>
+
+        
+
+        <li><h3><a href="special.html">特色菜</a></h3>
+		
+</li>
+
+        
+
+         	</ul>
+
+                 
+              </div>
+
+                <div class="left_lx">
+
+                	<h1>联系方式</h1>
+
+                    <p>地址：武汉市青山区和平大道927号</p>
+
+                      <p>联系人：韩艺坤</p>
+
+                      <p>电话：139XXXXXXXX</p>
+
+
+                </div>
+
+            </div>
+
+        	<div class="rightbar">
+
+            	<div class="bread"><a href="../index.html">首页</a> >特色菜</div>
+
+            	<ul class="ul_zj clearfix" id="con">
+
+                </ul>
+
+                <div class="paging"></div>
+
+            </div>
+
+        </div>
+
+		<!--content end--> 
+
+</div>
+
+<!--footer开始-->
+
+<div class="footer"> 
+   <p><a href="../index.html">首页</a> | <a href="historic.html">历史</a> | <a href="beautiful.html">风景</a>  | <a href="delicacy.html">美食</a> | <a href="new.html">动态</a> | <a href="leave.html">留言</a> | <a href="connection.html">联系我们</a></p>
+	
+  <p>Copyright &copy; 2016－2017 All Rights Reserved 版权所有  SSSR</p>
+  <p>地址：武汉科技大学信息学院   来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a> </p>
+</div>
+
+</div>
+<!--modal--> 
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" >
+      <div class="modal-header">
+      
+        <h1 class="modal-title" id="title" style="font-size: 20px;">Modal title</h1>
+      </div>
+      <div class="modal-body" id="modal">
+
+      </div>
+      <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--footer 结束--> 
+</body>
+ <script src="../js/jquery.min.js"></script>
+ <script src="../js/bootstrap-modal.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $.post("special.do",{},function(result){
+       // alert(result);
+        var x = eval("("+result+")");
+        for(var i in x.result){
+          $('#con').append('<a href="#" id="'+i+'" data-toggle="modal" data-target=".bs-example-modal-lg" onclick="addModal('+i+');"><li><img src="../'+x.result[i].img+'" width="220" height="140"><span>'+x.result[i].name+'</span></li></a>')
+        }
+      })
+    });
+    
+     function addModal(i){
+    $.post("special.do",{},function(result){
+        // alert(result);
+        var x = eval("("+result+")");
+        $('#modal').empty();
+        $('#title').empty();
+        $('#title').append(x.result[i].name);
+        $('#modal').append('<img src="../'+x.result[i].img+'" width="220" height="140">'+'<p>'+"地址："+x.result[i].location+'<br>'+
+          "票价："+x.result[i].price+'<br>'+
+          "简介："+x.result[i].description+'<br>'+
+          '</p>');
+      })
+  }
+  </script>
+</html>
+

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="newsForm" type="com.yourcompany.struts.form.NewsForm" />
+    <form-bean name="leaveForm" type="com.yourcompany.struts.form.LeaveForm" />
+    <form-bean name="historyForm" type="com.yourcompany.struts.form.HistoryForm" />
+    <form-bean name="newsDetailForm" type="com.yourcompany.struts.form.NewsDetailForm" />
+    <form-bean name="newsPageForm" type="com.yourcompany.struts.form.NewsPageForm" />
+    <form-bean name="beautifulForm" type="com.yourcompany.struts.form.BeautifulForm" />
+    <form-bean name="introduceForm" type="com.yourcompany.struts.form.IntroduceForm" />
+    <form-bean name="intrAndHisForm" type="com.yourcompany.struts.form.IntrAndHisForm" />
+    <form-bean name="specialForm" type="com.yourcompany.struts.form.SpecialForm" />
+    <form-bean name="delicacyForm" type="com.yourcompany.struts.form.DelicacyForm" />
+    <form-bean name="newsAddForm" type="com.yourcompany.struts.form.NewsAddForm" />
+    <form-bean name="newsDelForm" type="com.yourcompany.struts.form.NewsDelForm" />
+    <form-bean name="beautifulDelForm" type="com.yourcompany.struts.form.BeautifulDelForm" />
+    <form-bean name="beautifulAddForm" type="com.yourcompany.struts.form.BeautifulAddForm" />
+    <form-bean name="delicacyDelForm" type="com.yourcompany.struts.form.DelicacyDelForm" />
+    <form-bean name="delicacyAddForm" type="com.yourcompany.struts.form.DelicacyAddForm" />
+    <form-bean name="historyAddForm" type="com.yourcompany.struts.form.HistoryAddForm" />
+    <form-bean name="historyDelForm" type="com.yourcompany.struts.form.HistoryDelForm" />
+    <form-bean name="leaveGetForm" type="com.yourcompany.struts.form.LeaveGetForm" />
+    <form-bean name="leaveDelForm" type="com.yourcompany.struts.form.LeaveDelForm" />
+    <form-bean name="loginForm" type="com.yourcompany.struts.form.LoginForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="newsPageForm"
+      name="newsPageForm"
+      path="/template/news"
+      scope="request"
+      type="com.yourcompany.struts.action.NewsAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="leaveForm"
+      input="/template/leave.html"
+      name="leaveForm"
+      path="/template/leave"
+      scope="request"
+      type="com.yourcompany.struts.action.LeaveAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="intrAndHisForm"
+      input="/template/historic.html"
+      name="intrAndHisForm"
+      path="/template/history"
+      scope="request"
+      type="com.yourcompany.struts.action.HistoryAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="newsDetailForm"
+      name="newsDetailForm"
+      path="/template/newsDetail"
+      scope="request"
+      type="com.yourcompany.struts.action.NewsDetailAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="beautifulForm"
+      name="beautifulForm"
+      path="/template/beautiful"
+      scope="request"
+      type="com.yourcompany.struts.action.BeautifulAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="introduceForm"
+      name="introduceForm"
+      path="/template/introduce"
+      scope="request"
+      type="com.yourcompany.struts.action.IntroduceAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="specialForm"
+      name="specialForm"
+      path="/template/special"
+      scope="request"
+      type="com.yourcompany.struts.action.SpecialAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="delicacyForm"
+      name="delicacyForm"
+      path="/template/delicacy"
+      scope="request"
+      type="com.yourcompany.struts.action.DelicacyAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="newsAddForm"
+      name="newsAddForm"
+      path="/template/newsAdd"
+      scope="request"
+      type="com.yourcompany.struts.action.NewsAddAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="newsDelForm"
+      name="newsDelForm"
+      path="/template/newsDel"
+      scope="request"
+      type="com.yourcompany.struts.action.NewsDelAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="beautifulDelForm"
+      name="beautifulDelForm"
+      path="/template/beautifulDel"
+      scope="request"
+      type="com.yourcompany.struts.action.BeautifulDelAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="beautifulAddForm"
+      name="beautifulAddForm"
+      path="/template/beautifulAdd"
+      scope="request"
+      type="com.yourcompany.struts.action.BeautifulAddAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="delicacyDelForm"
+      name="delicacyDelForm"
+      path="/template/delicacyDel"
+      scope="request"
+      type="com.yourcompany.struts.action.DelicacyDelAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="delicacyAddForm"
+      name="delicacyAddForm"
+      path="/template/delicacyAdd"
+      scope="request"
+      type="com.yourcompany.struts.action.DelicacyAddAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="historyAddForm"
+      name="historyAddForm"
+      path="/template/historyAdd"
+      scope="request"
+      type="com.yourcompany.struts.action.HistoryAddAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="historyDelForm"
+      name="historyDelForm"
+      path="/template/historyDel"
+      scope="request"
+      type="com.yourcompany.struts.action.HistoryDelAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="leaveGetForm"
+      name="leaveGetForm"
+      path="/template/leaveGet"
+      scope="request"
+      type="com.yourcompany.struts.action.LeaveGetAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="leaveDelForm"
+      name="leaveDelForm"
+      path="/template/leaveDel"
+      scope="request"
+      type="com.yourcompany.struts.action.LeaveDelAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+    <action
+      attribute="loginForm"
+      name="loginForm"
+      path="/login"
+      scope="request"
+      type="com.yourcompany.struts.action.LoginAction">
+      <set-property property="cancellable" value="false" />
+      <forward name="success" path="/successJsp.jsp" />
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="com.yourcompany.struts.ApplicationResources" />
+</struts-config>
+

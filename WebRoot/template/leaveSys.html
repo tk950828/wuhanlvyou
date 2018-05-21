@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WUST</title>
+
+  <!-- Bootstrap -->
+  <link href="../css/bootstrap.css" rel="stylesheet">
+  <link href="../css/buttons.css" rel="stylesheet">
+   <style type="text/css">
+    .myinput{
+      padding: 0px;
+    }
+  </style>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+     <div class="panel panel-primary">
+       <div class="panel-heading">已有数据<button class="btn btn-default" style="float: right;padding-top: -15px;" data-toggle="modal" data-target="#myModal1" >增加</button></div>
+       <table class="table table-bordered" id="leave">
+        <!-- On rows -->
+     </table>
+   </div>
+
+   <!-- Modal1-->
+      <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- <form role="form" action="www.baidu.com" method="post"> -->
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">系统登录</h4>
+            </div>
+            <div class="modal-body">
+              <form action="historyAdd.do" method="post">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">代码</label>
+                  <input type="text" class="form-control myinput" id="" name="id">
+                </div>
+                <div class="form-group">
+                  <label for="">标题</label>
+                  <input type="text" class="form-control myinput" id="" name="title">
+                </div>
+                <div class="form-group">
+                  <label for="">上传用户</label>
+                  <input type="text" class="form-control myinput" id="" name="user">
+                </div>
+                <div class="form-group">
+                  <label for="">上传时间</label>
+                  <input type="text" class="form-control myinput" id="" name="date">
+                </div>
+                <div class="form-group">
+                  <label for="">内容</label>
+                  <input type="textare" class="form-control myinput" id="" name="text">
+                </div>
+               <!--  <div class="form-group">
+                  <label for="exampleInputFile">File input</label>
+                  <input type="file" id="exampleInputFile">
+                  <p class="help-block">Example block-level help text here.</p>
+                </div> -->
+                <!-- <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Check me out
+                  </label>
+                </div> -->
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+                <!-- </div> -->
+              </div>
+            </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+
+  <!-- Modal2 -->
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- <form role="form" action="www.baidu.com" method="post"> -->
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">描述</h4>
+            </div>
+            <div class="modal-body" id="detail">
+
+             
+
+                <!-- </div> -->
+              </div>
+            </div>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+ <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+ <script src="../js/jquery.min.js"></script>
+ <!-- Include all compiled plugins (below), or include individual files as needed -->
+ <script src="../js/bootstrap.min.js"></script>
+ <script src="../js/jquery.params.js"></script>
+ <script type="text/javascript">
+
+   $(function(){
+      // alert("test");
+      $.post("leaveGet.do",{},function(result){
+        // alert(result);
+        var x = eval("("+result+")");
+        add(x);
+      })
+    });
+
+
+    function add(x){
+        $('#leave').empty();
+      $('#leave').append('<tr class="active"><td class="">代码</td><td class="">用户</td><td class="">电话号码</td><td class="">性别</td><td class="">内容</td><td class="">操作</td></tr>');
+      for(var i in x.result){
+          $('#leave').append('<tr class="default" id=""><td class="">'+x.result[i].id+'</td><td class="">'+x.result[i].user+'</td><td class="">'+x.result[i].phone+'</td><td class="">'+x.result[i].sex+'</td><td class="">'+x.result[i].message+'</td><td><button class="button button-glow button-rounded  button-small" onclick="withdraw('+x.result[i].id+');">删除</button></td>');
+          // $('#news').append('<li><span>'+x.result[i].newsDate+'</span><a href="./news'+x.result[i].url+'">'+x.result[i].newsText+'</a></li>')
+        }
+    }
+
+    // function seeDetail(i){
+    //    $.post("history.do",{id : i},function(result){
+    //     // alert(result);
+    //     var x = eval("("+result+")");
+    //     alert(result);
+    //     $('#detail').empty();
+    //     $('#detail').append(x.result[0].text);
+    //   })
+    // }
+
+     function withdraw(i){
+       $.post("leaveDel.do",{id : i},function(result){
+        // alert(result);
+        var x = eval("("+result+")");
+        alert(result);
+      })
+    }
+</script>
+</body>
+</html>

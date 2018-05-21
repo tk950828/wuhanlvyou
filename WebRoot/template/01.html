@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <title>东方芝加哥—武汉</title>
+
+  <meta content="东方芝加哥-武汉" name="keywords" />
+
+  <meta content="东方芝加哥-武汉" name="description" />
+
+  <link href="../css/base.css" rel="stylesheet" type="text/css">
+
+  <link href="../css/pagename.css" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" type="text/css" href="../css/buttons.css">
+
+  <style type="text/css">
+  .myfloat {
+    float: right;
+  }
+  .paging {
+    padding: 20px;
+  }
+  </style>
+</head>
+
+
+
+<body>
+
+
+
+  <!--header-->
+
+  <div class="header"> 
+
+    <div class="w1000">
+
+      <p>你好，欢迎光临东方芝加哥-武汉！</p>
+
+      <div class="contact"><a href="../index.html">设为首页</a> <a href="../index.html">加入收藏</a></div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+<div class="w1000">
+
+	<div class="header_bottom">
+
+   <a href="../index.html"><img src="../images/wuhan/logowuhanc.jpg" width="300" height="50" alt="" title="东方芝加哥-武汉"></a>
+
+   <ul>
+
+     <li><a href="../index.html">网站首页</a></li>       
+
+     <li><a href="historic.html">历史</a></li>     
+
+     <li><a href="beautiful.html">风景</a></li>           
+
+     <li><a href="delicacy.html">美食</a></li>      
+
+     <li><a href="new.html">动态</a></li>      
+
+     <li><a href="leave.html">留言</a></li>      
+
+     <li><a href="about.html">团队介绍</a></li>   
+
+     <li><a href="connection.html">联系我们</a></li>
+
+   </ul>  
+
+ </div>       
+
+</div>
+  <!--header结束--> 
+
+  <div class="container">     
+
+    <!--banner-->
+
+		<div class="banner_erji">
+
+        	<img src="../images/wuhan/new.jpg" width="1000" height="187" alt="" title="">        </div>
+
+      <!--banner end--> 
+
+
+
+      <!--content-->
+
+      <div class="content clearfix">
+
+        <div class="leftbar">
+
+          <div class="leftnav">
+
+            <h1>新闻分类</h1>
+
+            <ul class="ul_left">
+
+
+
+
+
+              <li><h3><a href="./new.html">旅游动态</a></h3>
+
+              </li>
+
+
+
+              <li><h3><a href="./newest.html">旅游公告</a></h3>
+
+              </li>
+            </ul>
+
+
+          </div>
+
+                <div class="left_lx">
+
+                	<h1>联系方式</h1>
+
+                    <p>地址：武汉市青山区和平大道927号</p>
+
+                      <p>联系人：韩艺坤</p>
+
+                      <p>电话：139XXXXXXXX</p>
+
+
+                </div>
+
+        </div>
+
+        <div class="rightbar">
+
+          <div class="bread"><a href="../index.html">首页</a> <a href="./new.html" id="index">>最新动态></a> </div>
+
+          <div class="con_news">
+
+            <p class="p_tit2">
+
+                      <!-- <span>南宁历史</span>
+
+                      发布人:管理员　　发布时间：2016-07-2 23:25:28 -->
+
+                    </p>
+
+                    <div class="con">
+
+                     <p>
+
+                     </div>
+
+                   </div>
+                   <div class="paging" id="nextpre"></div>
+
+                 </div>
+
+               </div>
+
+               <!--content end--> 
+
+             </div>
+
+             <!--footer开始-->
+
+<div class="footer"> 
+
+   <p><a href="../index.html">首页</a> | <a href="historic.html">历史</a> | <a href="beautiful.html">风景</a>  | <a href="delicacy.html">美食</a> | <a href="new.html">动态</a> | <a href="leave.html">留言</a> | <a href="connection.html">联系我们</a></p>
+	
+  <p>Copyright &copy; 2016－2017 All Rights Reserved 版权所有  SSSR</p>
+  <p>地址：武汉科技大学信息学院   来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a> </p>
+</div>
+
+            <button onclick="getNewsNum();"></button>
+
+            <p>前面没有了</p>
+
+            <!--footer 结束--> 
+          </body>
+          <script src="../js/jquery.min.js"></script>
+          <script type="text/javascript">
+            $(function(){
+              var num = getCookie("data");
+      // DelCookie("flag");
+      // alert(num);
+      $.post("newsDetail.do",{newsNum: num},function(result){
+        // alert(result);
+        var x = eval("("+result+")");
+
+        $('.p_tit2').append(' <span>'+x.result[0].newsText+'</span>发布人:'+x.result[0].user+'发布时间：'+x.result[0].newsDate+'');
+        $('.con').append(x.result[0].detail);
+        $('.bread').append(x.result[0].newsText);
+        // alert(result)
+
+        if (x.result[1]==null) {
+          $('#nextpre').append('<button disabled="" class="button button-primary button-small">前面没有了</button>');
+          $('#nextpre').append('<button type="button" class="button button-primary button-small myfloat" onclick="getNewsNum('+x.result[2].id+');">'+x.result[2].newsText+'</button>');
+        } else if (x.result[2]==null) {
+          $('#nextpre').append('<button type="button" class="button button-primary button-small" onclick="getNewsNum('+x.result[1].id+');">'+x.result[1].newsText+'</button>');
+          $('#nextpre').append('<button disabled="" class="button button-primary button-small myfloat">后面没有了</button>');
+        }
+        else {
+         $('#nextpre').append('<button type="button" class="button button-primary button-small" onclick="getNewsNum('+x.result[1].id+');">'+x.result[1].newsText+'</button><button type="button" class="button button-primary button-small myfloat" onclick="getNewsNum('+x.result[2].id+');">'+x.result[2].newsText+'</button>');
+       }
+     })
+    });
+
+            function getNewsNum(i){
+      // document.cookie = "flag="+0;
+      // document.cookie = "data="+i;
+      alert(i);
+      $.post("newsDetail.do",{newsNum: i},function(result){
+        // alert(result);
+        $('.p_tit2').empty();
+        $('.con').empty();
+        $('.bread').empty();
+        $('#nextpre').empty();
+        var x = eval("("+result+")");
+
+        $('.p_tit2').append(' <span>'+x.result[0].newsText+'</span>发布人:'+x.result[0].user+'发布时间：'+x.result[0].newsDate+'');
+        $('.con').append(x.result[0].detail);
+        $('.bread').append(x.result[0].newsText);
+          // alert(result)
+
+        if (x.result[1]==null) {
+          $('#nextpre').append('<button disabled="" class="button button-primary button-small">前面没有了</button>');
+          $('#nextpre').append('<button type="button" class="button button-primary button-small myfloat" onclick="getNewsNum('+x.result[2].id+');">'+x.result[2].newsText+'</button>');
+        } else if (x.result[2]==null) {
+          $('#nextpre').append('<button type="button" class="button button-primary button-small" onclick="getNewsNum('+x.result[1].id+');">'+x.result[1].newsText+'</button>');
+          $('#nextpre').append('<button disabled="" class="button button-primary button-small myfloat">后面没有了</button>');
+        }
+        else {
+         $('#nextpre').append('<button type="button" class="button button-primary button-small" onclick="getNewsNum('+x.result[1].id+');">'+x.result[1].newsText+'</button><button type="button" class="button button-primary button-small myfloat" onclick="getNewsNum('+x.result[2].id+');">'+x.result[2].newsText+'</button>');
+       }
+       })
+    }
+
+    function getCookie(cname)
+    {
+      var ss = document.cookie;
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0; i<ca.length; i++)
+      {
+        var c = ca[i].trim();
+        if (c.indexOf(name)==0)
+          return c.substring(name.length,c.length);
+      }
+      return "";
+    }
+    function DelCookie(name) {
+      var exp = new Date();
+      exp.setTime(exp.getTime() + (-1 * 24 * 60 * 60 * 1000));
+      var cval = GetCookieValue(name);
+      document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+    }
+  </script>
+  </html>
+

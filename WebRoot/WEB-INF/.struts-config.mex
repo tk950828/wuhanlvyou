@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/template/news.do" location="-45,105" dimension="293,31" />
+  <StrutsActivity path="/template/leave.do" location="-45,150" dimension="294,31" />
+  <StrutsActivity path="/template/history.do" location="-45,210" dimension="302,31" />
+  <StrutsActivity path="/template/newsDetail.do" location="-45,390" dimension="326,31" />
+  <StrutsActivity path="/template/beautiful.do" location="675,30" dimension="311,31" />
+  <StrutsActivity path="/template/introduce.do" location="675,75" dimension="317,31" />
+  <StrutsActivity path="/template/special.do" location="-45,255" dimension="302,31" />
+  <StrutsActivity path="/template/delicacy.do" location="675,120" dimension="308,26" />
+  <StrutsActivity path="/template/newsAdd.do" location="-45,300" dimension="317,31" />
+  <StrutsActivity path="/template/newsDel.do" location="675,165" dimension="312,31" />
+  <StrutsActivity path="/template/beautifulDel.do" location="675,300" dimension="330,21" />
+  <StrutsActivity path="/template/beautifulAdd.do" location="675,255" dimension="335,31" />
+  <StrutsActivity path="/template/delicacyDel.do" location="-45,435" dimension="327,31" />
+  <StrutsActivity path="/template/delicacyAdd.do" location="675,210" dimension="332,31" />
+  <StrutsActivity path="/template/historyAdd.do" location="675,390" dimension="326,21" />
+  <StrutsActivity path="/template/historyDel.do" location="675,345" dimension="321,31" />
+  <StrutsActivity path="/template/leaveGet.do" location="0,1215" dimension="314,104" />
+  <StrutsActivity path="/template/leaveDel.do" location="-45,345" dimension="313,31" />
+  <StrutsActivity path="/successJsp.jsp" location="390,210" dimension="120,53" />
+  <StrutsActivity path="/template/leave.html" location="-285,150" dimension="151,53" />
+  <StrutsActivity path="/template/historic.html" location="-255,90" dimension="163,53" />
+  <StrutsActivity path="/login.do" location="675,435" dimension="293,21" />
+  <StrutsTransition id="/template/delicacy.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="983,135" />
+      <AbsolutePoint location="1025,135" />
+      <AbsolutePoint location="1025,-15" />
+      <AbsolutePoint location="450,-15" />
+      <AbsolutePoint location="450,210" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/leave.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="249,165" />
+      <AbsolutePoint location="368,165" />
+      <AbsolutePoint location="368,508" />
+      <AbsolutePoint location="467,508" />
+      <AbsolutePoint location="467,263" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/special.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="257,278" />
+      <AbsolutePoint location="398,278" />
+      <AbsolutePoint location="398,263" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="675,445" />
+      <AbsolutePoint location="450,445" />
+      <AbsolutePoint location="450,263" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/delicacy.jsp,null,/template/delicacy.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="990,398" />
+      <AbsolutePoint location="990,702" />
+      <AbsolutePoint location="983,133" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/beautifulDel.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="675,310" />
+      <AbsolutePoint location="637,310" />
+      <AbsolutePoint location="637,226" />
+      <AbsolutePoint location="510,226" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/special.jsp,null,/template/special.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1090,266" />
+      <AbsolutePoint location="1186,266" />
+      <AbsolutePoint location="1186,602" />
+      <AbsolutePoint location="257,270" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/news.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="248,122" />
+      <AbsolutePoint location="403,122" />
+      <AbsolutePoint location="403,210" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/newsAdd.jsp,null,/template/newsAdd.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="421,950" />
+      <AbsolutePoint location="421,732" />
+      <AbsolutePoint location="272,320" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/newsDetail.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="281,396" />
+      <AbsolutePoint location="420,396" />
+      <AbsolutePoint location="420,263" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/leaveDel.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="268,360" />
+      <AbsolutePoint location="278,360" />
+      <AbsolutePoint location="278,236" />
+      <AbsolutePoint location="390,236" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/beautiful.jsp,null,/template/beautiful.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="945,134" />
+      <AbsolutePoint location="986,82" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/delicacyDel.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="282,450" />
+      <AbsolutePoint location="450,450" />
+      <AbsolutePoint location="450,263" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/beautiful.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="675,45" />
+      <AbsolutePoint location="467,45" />
+      <AbsolutePoint location="467,210" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/leaveGet.jsp,null,/template/leaveGet.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,1376" />
+      <AbsolutePoint location="314,1241" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/historyDel.jsp,null,/template/historyDel.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="198,1276" />
+      <AbsolutePoint location="1410,1276" />
+      <AbsolutePoint location="835,412" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/newsAdd.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="272,306" />
+      <AbsolutePoint location="587,306" />
+      <AbsolutePoint location="587,248" />
+      <AbsolutePoint location="510,248" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/delicacyAdd.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="999,210" />
+      <AbsolutePoint location="999,-85" />
+      <AbsolutePoint location="335,-85" />
+      <AbsolutePoint location="335,248" />
+      <AbsolutePoint location="390,248" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/leaveGet.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="157,1215" />
+      <AbsolutePoint location="157,531" />
+      <AbsolutePoint location="476,531" />
+      <AbsolutePoint location="476,263" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/login.jsp,null,/login.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="966,550" />
+      <AbsolutePoint location="966,456" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/leave.html,null,/template/leave.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-134,165" />
+      <AbsolutePoint location="-45,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/introduce.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="992,90" />
+      <AbsolutePoint location="1085,90" />
+      <AbsolutePoint location="1085,-45" />
+      <AbsolutePoint location="433,-45" />
+      <AbsolutePoint location="433,210" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/newsDel.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="675,166" />
+      <AbsolutePoint location="497,166" />
+      <AbsolutePoint location="497,210" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/historyDel.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="675,360" />
+      <AbsolutePoint location="297,360" />
+      <AbsolutePoint location="297,258" />
+      <AbsolutePoint location="390,258" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/history.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="257,225" />
+      <AbsolutePoint location="390,225" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/leaveDel.jsp,null,/template/leaveDel.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="189,1476" />
+      <AbsolutePoint location="1406,1476" />
+      <AbsolutePoint location="111,412" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/newsDel.jsp,null,/template/newsDel.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="788,975" />
+      <AbsolutePoint location="1295,975" />
+      <AbsolutePoint location="965,232" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/beautifulAdd.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="675,270" />
+      <AbsolutePoint location="502,270" />
+      <AbsolutePoint location="502,263" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/introduce.jsp,null,/template/introduce.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="445,405" />
+      <AbsolutePoint location="675,53" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/historic.html,null,/template/history.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-127,143" />
+      <AbsolutePoint location="-127,248" />
+      <AbsolutePoint location="106,248" />
+      <AbsolutePoint location="106,241" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/template/historyAdd.do,success,/successJsp.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="675,400" />
+      <AbsolutePoint location="539,400" />
+      <AbsolutePoint location="539,258" />
+      <AbsolutePoint location="510,258" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+
